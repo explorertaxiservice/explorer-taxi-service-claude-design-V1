@@ -7,6 +7,7 @@
 
   const navItems = [
     { href: 'airport-transfers.html', en: 'Airport & station transfers', fr: 'Aéroports & gares', key: 'airport' },
+    { href: 'le-havre.html', en: 'Le Havre cruises', fr: 'Croisières Le Havre', key: 'le-havre' },
     { href: 'disneyland.html', en: 'Disneyland', fr: 'Disneyland', key: 'disneyland' },
     { href: 'day-hire.html', en: 'Private day hire', fr: 'Journée privée', key: 'day-hire' },
     { href: 'vehicle.html', en: 'Our vehicle', fr: 'Notre véhicule', key: 'vehicle' },
@@ -48,6 +49,7 @@
       </div>
       <div><h4>Services</h4><ul>
         <li><a href="airport-transfers.html"><span data-lang="en">Airport transfers</span><span data-lang="fr">Transferts aéroport</span></a></li>
+        <li><a href="le-havre.html"><span data-lang="en">Le Havre cruises</span><span data-lang="fr">Croisières Le Havre</span></a></li>
         <li><a href="disneyland.html">Disneyland Paris</a></li>
         <li><a href="day-hire.html"><span data-lang="en">Private day hire</span><span data-lang="fr">Journée privée</span></a></li>
         <li><a href="vehicle.html"><span data-lang="en">Our vehicle</span><span data-lang="fr">Notre véhicule</span></a></li>
