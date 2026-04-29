@@ -58,6 +58,8 @@
         <div id="quickFormWrap">
           <form id="quickForm" name="quick-booking" data-netlify="true" style="background: var(--white); padding: 40px; border-radius: var(--radius-lg); border: 1px solid var(--slate-line); box-shadow: var(--shadow);">
             <input type="hidden" name="form-name" value="quick-booking">
+            <input type="hidden" name="reference_reservation" id="refHiddenQuick">
+            <input type="hidden" name="service_lisible" id="serviceLisible">
             <h3 style="margin-bottom: 24px;"><span data-lang="en">Quick booking</span><span data-lang="fr">Réservation rapide</span></h3>
             <div class="grid-2" style="gap: 16px; margin-bottom: 16px;">
               <div class="field"><label><span data-lang="en">First name</span><span data-lang="fr">Prénom</span> *</label><input type="text" name="prenom" required></div>
@@ -105,6 +107,7 @@
         <div id="detailedFormWrap" style="display:none;">
           <form id="detailedForm" name="detailed-booking" data-netlify="true" style="background: var(--white); padding: 40px; border-radius: var(--radius-lg); border: 1px solid var(--slate-line); box-shadow: var(--shadow);">
             <input type="hidden" name="form-name" value="detailed-booking">
+            <input type="hidden" name="reference_reservation" id="refHiddenDetailed">
             <p style="margin-bottom: 28px; font-size: 14.5px; color: var(--slate-soft);"><span data-lang="en">Recommended for round trips, medical transfers, or travelers with specific equipment needs. Aimad will receive all details upfront and prepare your trip in advance.</span><span data-lang="fr">Recommandé pour les allers-retours, transferts médicaux ou besoins spécifiques. Aimad reçoit tous les détails à l'avance.</span></p>
 
             <h4 class="form-section-title"><span data-lang="en">1. Transfer details</span><span data-lang="fr">1. Détails du transfert</span></h4>
@@ -332,6 +335,8 @@ function updatePrice() {
   const labels = lang === 'fr' ? serviceLabelsF : serviceLabels;
   document.getElementById('priceEstimate').textContent = prices[val] || '—';
   document.getElementById('summaryService').textContent = labels[val] || '—';
+  const sl = document.getElementById('serviceLisible');
+  if (sl) sl.value = val ? (serviceLabels[val] || val) + (servicePrices[val] ? ' — ' + servicePrices[val] : '') : '';
 }
 const qs = document.getElementById('quickService');
 if (qs) qs.addEventListener('change', updatePrice);
@@ -380,9 +385,8 @@ function submitForm(form) {
   const btn = form.querySelector('[type="submit"]');
   if (btn) { btn.disabled = true; btn.textContent = '…'; }
   const ref = 'EXP-' + Date.now().toString(36).toUpperCase().slice(-6);
-  let refInput = form.querySelector('[name="reference_reservation"]');
-  if (!refInput) { refInput = document.createElement('input'); refInput.type = 'hidden'; refInput.name = 'reference_reservation'; form.appendChild(refInput); }
-  refInput.value = ref;
+  const refInput = form.querySelector('[name="reference_reservation"]');
+  if (refInput) refInput.value = ref;
   fetch('/', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
