@@ -31,7 +31,7 @@
         </ul>
       </div>
       <div class="reveal">
-        <div class="img-ph" data-ratio="square" style="overflow:hidden;"><img src="uploads/vehicle-eiffel.jpg" alt="Véhicule Explorer Taxi à Paris" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;display:block;position:absolute;top:0;left:0;"></div>
+        <div class="img-ph" data-ratio="square" style="overflow:hidden;"><img src="uploads/aimad-client.jpg" alt="Aimad avec la cliente Lucie CARRASCO en fauteuil roulant à Paris" style="width:100%;height:100%;object-fit:cover;object-position:center top;border-radius:inherit;display:block;position:absolute;top:0;left:0;"></div>
       </div>
     </div>
   </div>
@@ -45,13 +45,14 @@
         <h2 style="margin-bottom: 16px;"><span data-lang="en">Send us a message.</span><span data-lang="fr">Envoyez un message.</span></h2>
         <p class="lead"><span data-lang="en">We answer all questions, big and small. Reply within two hours during the day.</span><span data-lang="fr">Toute question, petite ou grande. Réponse sous 2h en journée.</span></p>
       </div>
-      <form class="reveal" id="contactForm" style="background: var(--white); padding: 32px; border-radius: var(--radius-lg); border: 1px solid var(--slate-line); display: flex; flex-direction: column; gap: 20px;">
+      <form class="reveal" id="contactForm" name="contact" data-netlify="true" style="background: var(--white); padding: 32px; border-radius: var(--radius-lg); border: 1px solid var(--slate-line); display: flex; flex-direction: column; gap: 20px;">
+        <input type="hidden" name="form-name" value="contact">
         <div class="grid-2" style="gap: 16px;">
           <div class="field"><label><span data-lang="en">First name</span><span data-lang="fr">Prénom</span></label><input type="text" name="firstName" required></div>
           <div class="field"><label><span data-lang="en">Last name</span><span data-lang="fr">Nom</span></label><input type="text" name="lastName" required></div>
         </div>
         <div class="field"><label>Email</label><input type="email" name="email" required><span class="err"><span data-lang="en">Please enter a valid email.</span><span data-lang="fr">Email invalide.</span></span></div>
-        <div class="field"><label><span data-lang="en">What's it about?</span><span data-lang="fr">Sujet</span></label><select name="topic"><option><span data-lang="en">A booking question</span><span data-lang="fr">Une question de réservation</span></option><option><span data-lang="en">Wheelchair fit / accessibility</span><span data-lang="fr">Compatibilité fauteuil</span></option><option><span data-lang="en">Custom day tour</span><span data-lang="fr">Journée sur-mesure</span></option><option><span data-lang="en">Pricing or invoicing</span><span data-lang="fr">Tarifs ou facturation</span></option><option><span data-lang="en">Something else</span><span data-lang="fr">Autre chose</span></option></select></div>
+        <div class="field"><label><span data-lang="en">What's it about?</span><span data-lang="fr">Sujet</span></label><select name="topic" id="contactTopic"><option data-en="A booking question" data-fr="Une question de réservation">A booking question</option><option data-en="Wheelchair fit / accessibility" data-fr="Compatibilité fauteuil">Wheelchair fit / accessibility</option><option data-en="Custom day tour" data-fr="Journée sur-mesure">Custom day tour</option><option data-en="Pricing or invoicing" data-fr="Tarifs ou facturation">Pricing or invoicing</option><option data-en="Something else" data-fr="Autre chose">Something else</option></select></div>
         <div class="field"><label><span data-lang="en">How would you like a reply?</span><span data-lang="fr">Réponse préférée</span></label><div class="checks" style="flex-direction:row;flex-wrap:wrap;gap:20px;"><label class="check"><input type="radio" name="reply" value="email" checked> Email</label><label class="check"><input type="radio" name="reply" value="phone"> <span data-lang="en">Phone call</span><span data-lang="fr">Appel</span></label><label class="check"><input type="radio" name="reply" value="wa"> WhatsApp</label></div></div>
         <div class="field"><label><span data-lang="en">Message</span><span data-lang="fr">Message</span></label><textarea name="message" required placeholder="..."></textarea></div>
         <label class="check"><input type="checkbox" required> <span style="font-size:13px;color:var(--slate-soft);"><span data-lang="en">I agree to be contacted about my message. We don't share your details.</span><span data-lang="fr">J'accepte d'être contacté. Vos informations ne sont pas partagées.</span></span></label>
@@ -112,6 +113,17 @@
 <script src="assets/chrome.js"></script>
 <script src="assets/site.js"></script>
 <script>
+function updateSelectLang() {
+  const lang = document.documentElement.getAttribute('data-lang') || 'en';
+  document.querySelectorAll('option[data-en]').forEach(opt => {
+    opt.textContent = opt.dataset[lang] || opt.dataset.en;
+  });
+}
+updateSelectLang();
+document.addEventListener('click', e => {
+  if (e.target.closest('.lang-toggle button')) setTimeout(updateSelectLang, 30);
+});
+
 document.getElementById('contactForm').addEventListener('submit', e => {
   e.preventDefault();
   const f = e.target, email = f.email.value;
@@ -120,6 +132,11 @@ document.getElementById('contactForm').addEventListener('submit', e => {
     return;
   }
   f.email.parentElement.classList.remove('invalid');
+  fetch('/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams(new FormData(f)).toString()
+  }).catch(() => {});
   document.getElementById('contactSuccess').style.display = 'block';
   f.reset();
 });
