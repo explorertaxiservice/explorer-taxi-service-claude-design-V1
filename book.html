@@ -60,16 +60,16 @@
             <input type="hidden" name="form-name" value="quick-booking">
             <h3 style="margin-bottom: 24px;"><span data-lang="en">Quick booking</span><span data-lang="fr">Réservation rapide</span></h3>
             <div class="grid-2" style="gap: 16px; margin-bottom: 16px;">
-              <div class="field"><label><span data-lang="en">First name</span><span data-lang="fr">Prénom</span> *</label><input type="text" name="firstName" required></div>
-              <div class="field"><label><span data-lang="en">Last name</span><span data-lang="fr">Nom</span> *</label><input type="text" name="lastName" required></div>
+              <div class="field"><label><span data-lang="en">First name</span><span data-lang="fr">Prénom</span> *</label><input type="text" name="prenom" required></div>
+              <div class="field"><label><span data-lang="en">Last name</span><span data-lang="fr">Nom</span> *</label><input type="text" name="nom" required></div>
             </div>
             <div class="grid-2" style="gap: 16px; margin-bottom: 16px;">
               <div class="field"><label>Email *</label><input type="email" name="email" required></div>
-              <div class="field"><label>Phone / WhatsApp *</label><input type="tel" name="phone" placeholder="+33 ..." required></div>
+              <div class="field"><label>Phone / WhatsApp *</label><input type="tel" name="telephone" placeholder="+33 ..." required></div>
             </div>
             <div class="field" style="margin-bottom: 16px;">
               <label><span data-lang="en">Trip type</span><span data-lang="fr">Type de trajet</span> *</label>
-              <select name="service" id="quickService" required>
+              <select name="type_trajet" id="quickService" required>
                 <option value=""><span data-lang="en">Select your route...</span><span data-lang="fr">Choisissez votre trajet...</span></option>
                 <option value="cdg">CDG Airport Transfer — €95</option>
                 <option value="orly">Orly Airport Transfer — €70</option>
@@ -80,16 +80,16 @@
               </select>
             </div>
             <div class="grid-2" style="gap: 16px; margin-bottom: 16px;">
-              <div class="field"><label><span data-lang="en">Date</span><span data-lang="fr">Date</span> *</label><input type="date" name="date" required></div>
-              <div class="field"><label><span data-lang="en">Pickup time</span><span data-lang="fr">Heure de prise en charge</span> *</label><input type="time" name="time" required></div>
+              <div class="field"><label><span data-lang="en">Date</span><span data-lang="fr">Date</span> *</label><input type="date" name="date_trajet" required></div>
+              <div class="field"><label><span data-lang="en">Pickup time</span><span data-lang="fr">Heure de prise en charge</span> *</label><input type="time" name="heure_trajet" required></div>
             </div>
             <div class="field" style="margin-bottom: 16px;">
               <label><span data-lang="en">Wheelchair type</span><span data-lang="fr">Type de fauteuil</span> *</label>
               <div class="radio-group">
-                <label class="radio-box"><input type="radio" name="chair" value="manual" required> <span><span data-lang="en">Manual wheelchair</span><span data-lang="fr">Fauteuil manuel</span></span></label>
-                <label class="radio-box"><input type="radio" name="chair" value="electric"> <span><span data-lang="en">Electric wheelchair</span><span data-lang="fr">Fauteuil électrique</span></span></label>
-                <label class="radio-box"><input type="radio" name="chair" value="scooter"> <span><span data-lang="en">Large mobility scooter</span><span data-lang="fr">Scooter de mobilité</span></span></label>
-                <label class="radio-box"><input type="radio" name="chair" value="none"> <span><span data-lang="en">No wheelchair needed</span><span data-lang="fr">Pas de fauteuil</span></span></label>
+                <label class="radio-box"><input type="radio" name="type_fauteuil" value="manual" required> <span><span data-lang="en">Manual wheelchair</span><span data-lang="fr">Fauteuil manuel</span></span></label>
+                <label class="radio-box"><input type="radio" name="type_fauteuil" value="electric"> <span><span data-lang="en">Electric wheelchair</span><span data-lang="fr">Fauteuil électrique</span></span></label>
+                <label class="radio-box"><input type="radio" name="type_fauteuil" value="scooter"> <span><span data-lang="en">Large mobility scooter</span><span data-lang="fr">Scooter de mobilité</span></span></label>
+                <label class="radio-box"><input type="radio" name="type_fauteuil" value="none"> <span><span data-lang="en">No wheelchair needed</span><span data-lang="fr">Pas de fauteuil</span></span></label>
               </div>
             </div>
             <div class="field" style="margin-bottom: 20px;">
@@ -114,14 +114,14 @@
               <div class="transfer-block">
                 <div class="transfer-label"><span class="transfer-badge">TRANSFER 1</span> <span data-lang="en">Trip details</span><span data-lang="fr">Détails du trajet</span></div>
                 <div class="grid-2" style="gap: 12px; margin-bottom: 12px;">
-                  <div class="field"><label><span data-lang="en">Date</span><span data-lang="fr">Date</span> *</label><input type="date" name="date1" required></div>
-                  <div class="field"><label><span data-lang="en">Pickup time</span><span data-lang="fr">Heure</span> *</label><input type="time" name="time1" required></div>
+                  <div class="field"><label><span data-lang="en">Date</span><span data-lang="fr">Date</span> *</label><input type="date" name="transfert_1_date" required></div>
+                  <div class="field"><label><span data-lang="en">Pickup time</span><span data-lang="fr">Heure</span> *</label><input type="time" name="transfert_1_heure" required></div>
                 </div>
-                <div class="field" style="margin-bottom: 12px;"><label><span data-lang="en">Pickup location</span><span data-lang="fr">Lieu de prise en charge</span> *</label><input type="text" name="from1" placeholder="e.g. CDG airport, terminal 2E or full address" required></div>
-                <div class="field" style="margin-bottom: 12px;"><label><span data-lang="en">Drop-off location</span><span data-lang="fr">Destination</span> *</label><input type="text" name="to1" placeholder="Full destination address (hotel, apartment...)"></div>
+                <div class="field" style="margin-bottom: 12px;"><label><span data-lang="en">Pickup location</span><span data-lang="fr">Lieu de prise en charge</span> *</label><input type="text" name="transfert_1_depart" placeholder="e.g. CDG airport, terminal 2E or full address" required></div>
+                <div class="field" style="margin-bottom: 12px;"><label><span data-lang="en">Drop-off location</span><span data-lang="fr">Destination</span> *</label><input type="text" name="transfert_1_destination" placeholder="Full destination address (hotel, apartment...)"></div>
                 <div class="grid-2" style="gap: 12px;">
-                  <div class="field"><label><span data-lang="en">Flight number (if airport)</span><span data-lang="fr">N° de vol (si aéroport)</span></label><input type="text" name="flight1" placeholder="e.g. EI 526, AF 1234"></div>
-                  <div class="field"><label><span data-lang="en">Flight arrival/departure time</span><span data-lang="fr">Heure d'arrivée/départ</span></label><input type="time" name="flightTime1"></div>
+                  <div class="field"><label><span data-lang="en">Flight number (if airport)</span><span data-lang="fr">N° de vol (si aéroport)</span></label><input type="text" name="transfert_1_vol" placeholder="e.g. EI 526, AF 1234"></div>
+                  <div class="field"><label><span data-lang="en">Flight arrival/departure time</span><span data-lang="fr">Heure d'arrivée/départ</span></label><input type="time" name="transfert_1_heure_vol"></div>
                 </div>
               </div>
             </div>
@@ -132,58 +132,58 @@
 
             <div class="grid-2" style="gap: 16px; margin-bottom: 16px;">
               <div class="field"><label><span data-lang="en">Number of wheelchair users</span><span data-lang="fr">Nombre d'utilisateurs fauteuil</span> *</label>
-                <select name="wcUsers" required><option value="">Select...</option><option>1</option><option>2</option></select></div>
+                <select name="nb_fauteuils" required><option value="">Select...</option><option>1</option><option>2</option></select></div>
               <div class="field"><label><span data-lang="en">Total passengers (incl. WC user)</span><span data-lang="fr">Total passagers (dont fauteuil)</span> *</label>
-                <select name="totalPax" required><option value="">Select...</option><option>1</option><option>2</option><option>3</option><option>4</option></select></div>
+                <select name="nb_passagers" required><option value="">Select...</option><option>1</option><option>2</option><option>3</option><option>4</option></select></div>
             </div>
             <div class="field" style="margin-bottom: 16px;">
               <label><span data-lang="en">Type of mobility equipment</span><span data-lang="fr">Type d'équipement de mobilité</span> *</label>
               <div class="radio-group">
-                <label class="radio-box"><input type="radio" name="equipment" value="manual" required> <span><span data-lang="en">Manual wheelchair</span><span data-lang="fr">Fauteuil manuel</span></span></label>
-                <label class="radio-box"><input type="radio" name="equipment" value="electric"> <span><span data-lang="en">Electric / power wheelchair</span><span data-lang="fr">Fauteuil électrique / motorisé</span></span></label>
-                <label class="radio-box"><input type="radio" name="equipment" value="scooter"> <span><span data-lang="en">Large mobility scooter</span><span data-lang="fr">Scooter de mobilité</span></span></label>
-                <label class="radio-box"><input type="radio" name="equipment" value="other"> <span><span data-lang="en">Other (specify in notes)</span><span data-lang="fr">Autre (préciser dans les notes)</span></span></label>
+                <label class="radio-box"><input type="radio" name="type_equipement" value="manual" required> <span><span data-lang="en">Manual wheelchair</span><span data-lang="fr">Fauteuil manuel</span></span></label>
+                <label class="radio-box"><input type="radio" name="type_equipement" value="electric"> <span><span data-lang="en">Electric / power wheelchair</span><span data-lang="fr">Fauteuil électrique / motorisé</span></span></label>
+                <label class="radio-box"><input type="radio" name="type_equipement" value="scooter"> <span><span data-lang="en">Large mobility scooter</span><span data-lang="fr">Scooter de mobilité</span></span></label>
+                <label class="radio-box"><input type="radio" name="type_equipement" value="other"> <span><span data-lang="en">Other (specify in notes)</span><span data-lang="fr">Autre (préciser dans les notes)</span></span></label>
               </div>
             </div>
             <div class="grid-2" style="gap: 16px; margin-bottom: 16px;">
-              <div class="field"><label><span data-lang="en">Wheelchair user height</span><span data-lang="fr">Taille de l'utilisateur</span></label><input type="text" name="userHeight" placeholder="e.g. 1.70m or 5'7&quot;"></div>
-              <div class="field"><label><span data-lang="en">Wheelchair user weight</span><span data-lang="fr">Poids de l'utilisateur</span></label><input type="text" name="userWeight" placeholder="e.g. 75kg or 165 lbs"></div>
+              <div class="field"><label><span data-lang="en">Wheelchair user height</span><span data-lang="fr">Taille de l'utilisateur</span></label><input type="text" name="taille_utilisateur" placeholder="e.g. 1.70m or 5'7&quot;"></div>
+              <div class="field"><label><span data-lang="en">Wheelchair user weight</span><span data-lang="fr">Poids de l'utilisateur</span></label><input type="text" name="poids_utilisateur" placeholder="e.g. 75kg or 165 lbs"></div>
             </div>
             <div class="grid-2" style="gap: 16px; margin-bottom: 16px;">
-              <div class="field"><label><span data-lang="en">Wheelchair width</span><span data-lang="fr">Largeur du fauteuil</span></label><input type="text" name="wcWidth" placeholder="e.g. 65 cm"></div>
-              <div class="field"><label><span data-lang="en">Wheelchair length</span><span data-lang="fr">Longueur du fauteuil</span></label><input type="text" name="wcLength" placeholder="e.g. 110 cm"></div>
+              <div class="field"><label><span data-lang="en">Wheelchair width</span><span data-lang="fr">Largeur du fauteuil</span></label><input type="text" name="largeur_fauteuil" placeholder="e.g. 65 cm"></div>
+              <div class="field"><label><span data-lang="en">Wheelchair length</span><span data-lang="fr">Longueur du fauteuil</span></label><input type="text" name="longueur_fauteuil" placeholder="e.g. 110 cm"></div>
             </div>
             <div class="field" style="margin-bottom: 16px;">
               <label><span data-lang="en">Able to transfer to a regular seat?</span><span data-lang="fr">Peut transférer sur un siège classique ?</span> *</label>
               <div class="radio-group">
-                <label class="radio-box"><input type="radio" name="canTransfer" value="yes" required> <span><span data-lang="en">Yes — can transfer with assistance</span><span data-lang="fr">Oui — peut transférer avec aide</span></span></label>
-                <label class="radio-box"><input type="radio" name="canTransfer" value="no"> <span><span data-lang="en">No — needs to stay in wheelchair throughout</span><span data-lang="fr">Non — reste en fauteuil pendant tout le trajet</span></span></label>
+                <label class="radio-box"><input type="radio" name="peut_transferer_siege" value="yes" required> <span><span data-lang="en">Yes — can transfer with assistance</span><span data-lang="fr">Oui — peut transférer avec aide</span></span></label>
+                <label class="radio-box"><input type="radio" name="peut_transferer_siege" value="no"> <span><span data-lang="en">No — needs to stay in wheelchair throughout</span><span data-lang="fr">Non — reste en fauteuil pendant tout le trajet</span></span></label>
               </div>
             </div>
             <div class="field" style="margin-bottom: 16px;">
               <label><span data-lang="en">Ramp or lift required?</span><span data-lang="fr">Rampe ou ascenseur nécessaire ?</span> *</label>
               <div class="radio-group">
-                <label class="radio-box"><input type="radio" name="ramp" value="ramp" required> <span><span data-lang="en">Ramp (standard)</span><span data-lang="fr">Rampe (standard)</span></span></label>
-                <label class="radio-box"><input type="radio" name="ramp" value="lift"> <span><span data-lang="en">Lift (specify why in notes)</span><span data-lang="fr">Ascenseur (préciser dans les notes)</span></span></label>
+                <label class="radio-box"><input type="radio" name="rampe_ou_ascenseur" value="ramp" required> <span><span data-lang="en">Ramp (standard)</span><span data-lang="fr">Rampe (standard)</span></span></label>
+                <label class="radio-box"><input type="radio" name="rampe_ou_ascenseur" value="lift"> <span><span data-lang="en">Lift (specify why in notes)</span><span data-lang="fr">Ascenseur (préciser dans les notes)</span></span></label>
               </div>
             </div>
-            <div class="field" style="margin-bottom: 16px;"><label><span data-lang="en">Luggage details</span><span data-lang="fr">Détails des bagages</span></label><textarea name="luggage" placeholder="e.g. 2× 20kg suitcases + 1× cabin bag + small rucksack" rows="2"></textarea></div>
-            <div class="field" style="margin-bottom: 28px;"><label><span data-lang="en">Other accessibility needs or accompanying equipment</span><span data-lang="fr">Autres besoins d'accessibilité ou équipements</span></label><textarea name="otherNeeds" placeholder="e.g. portable oxygen, walking aid, service dog, medical accompanist, child seat..." rows="3"></textarea></div>
+            <div class="field" style="margin-bottom: 16px;"><label><span data-lang="en">Luggage details</span><span data-lang="fr">Détails des bagages</span></label><textarea name="bagages" placeholder="e.g. 2× 20kg suitcases + 1× cabin bag + small rucksack" rows="2"></textarea></div>
+            <div class="field" style="margin-bottom: 28px;"><label><span data-lang="en">Other accessibility needs or accompanying equipment</span><span data-lang="fr">Autres besoins d'accessibilité ou équipements</span></label><textarea name="autres_besoins" placeholder="e.g. portable oxygen, walking aid, service dog, medical accompanist, child seat..." rows="3"></textarea></div>
 
             <h4 class="form-section-title"><span data-lang="en">3. Contact &amp; confirmation</span><span data-lang="fr">3. Contact &amp; confirmation</span></h4>
             <div class="grid-2" style="gap: 16px; margin-bottom: 16px;">
-              <div class="field"><label><span data-lang="en">First name</span><span data-lang="fr">Prénom</span> *</label><input type="text" name="firstName" required></div>
-              <div class="field"><label><span data-lang="en">Last name</span><span data-lang="fr">Nom</span> *</label><input type="text" name="lastName" required></div>
+              <div class="field"><label><span data-lang="en">First name</span><span data-lang="fr">Prénom</span> *</label><input type="text" name="prenom" required></div>
+              <div class="field"><label><span data-lang="en">Last name</span><span data-lang="fr">Nom</span> *</label><input type="text" name="nom" required></div>
             </div>
             <div class="grid-2" style="gap: 16px; margin-bottom: 16px;">
               <div class="field"><label>Email *</label><input type="email" name="email" required></div>
-              <div class="field"><label>Phone / WhatsApp *</label><input type="tel" name="phone" placeholder="+33 ..." required></div>
+              <div class="field"><label>Phone / WhatsApp *</label><input type="tel" name="telephone" placeholder="+33 ..." required></div>
             </div>
             <div class="field" style="margin-bottom: 16px;">
               <label><span data-lang="en">Preferred language for communication</span><span data-lang="fr">Langue de communication préférée</span></label>
-              <select name="commLang"><option value="en">English</option><option value="fr">Français</option></select>
+              <select name="langue_preferee"><option value="en">English</option><option value="fr">Français</option></select>
             </div>
-            <div class="field" style="margin-bottom: 20px;"><label><span data-lang="en">Anything else we should know?</span><span data-lang="fr">Autre chose à savoir ?</span></label><textarea name="notes" placeholder="Trip purpose, special occasion, accessibility concerns, dietary needs for long trips..." rows="3"></textarea></div>
+            <div class="field" style="margin-bottom: 20px;"><label><span data-lang="en">Anything else we should know?</span><span data-lang="fr">Autre chose à savoir ?</span></label><textarea name="notes_supplementaires" placeholder="Trip purpose, special occasion, accessibility concerns, dietary needs for long trips..." rows="3"></textarea></div>
             <label class="check" style="margin-bottom: 20px;"><input type="checkbox" required> <span style="font-size: 13px;"><span data-lang="en">I agree to the <a href="#">terms</a> and <a href="#">privacy policy</a>.</span><span data-lang="fr">J'accepte les <a href="#">conditions</a> et la <a href="#">politique de confidentialité</a>.</span></span></label>
             <button type="submit" class="btn btn-marine btn-lg" style="width:100%;"><span data-lang="en">Send booking request</span><span data-lang="fr">Envoyer la demande</span></button>
           </form>
@@ -363,30 +363,44 @@ document.getElementById('addTransferBtn').addEventListener('click', () => {
   block.innerHTML = `
     <div class="transfer-label"><span class="transfer-badge">TRANSFER ${n}</span> <span data-lang="en">Trip details</span><span data-lang="fr">Détails du trajet</span></div>
     <div class="grid-2" style="gap:12px;margin-bottom:12px;">
-      <div class="field"><label>Date *</label><input type="date" name="date${n}" required></div>
-      <div class="field"><label>Pickup time *</label><input type="time" name="time${n}" required></div>
+      <div class="field"><label>Date *</label><input type="date" name="transfert_${n}_date" required></div>
+      <div class="field"><label>Pickup time *</label><input type="time" name="transfert_${n}_heure" required></div>
     </div>
-    <div class="field" style="margin-bottom:12px;"><label>Pickup location *</label><input type="text" name="from${n}" placeholder="e.g. CDG airport, terminal 2E or full address" required></div>
-    <div class="field" style="margin-bottom:12px;"><label>Drop-off location</label><input type="text" name="to${n}" placeholder="Full destination address (hotel, apartment...)"></div>
+    <div class="field" style="margin-bottom:12px;"><label>Pickup location *</label><input type="text" name="transfert_${n}_depart" placeholder="e.g. CDG airport, terminal 2E or full address" required></div>
+    <div class="field" style="margin-bottom:12px;"><label>Drop-off location</label><input type="text" name="transfert_${n}_destination" placeholder="Full destination address (hotel, apartment...)"></div>
     <div class="grid-2" style="gap:12px;">
-      <div class="field"><label>Flight number (if airport)</label><input type="text" name="flight${n}" placeholder="e.g. EI 526, AF 1234"></div>
-      <div class="field"><label>Flight arrival/departure time</label><input type="time" name="flightTime${n}"></div>
+      <div class="field"><label>Flight number (if airport)</label><input type="text" name="transfert_${n}_vol" placeholder="e.g. EI 526, AF 1234"></div>
+      <div class="field"><label>Flight arrival/departure time</label><input type="time" name="transfert_${n}_heure_vol"></div>
     </div>`;
   document.getElementById('transfersContainer').appendChild(block);
 });
 
 // Form submissions
 function submitForm(form) {
+  const btn = form.querySelector('[type="submit"]');
+  if (btn) { btn.disabled = true; btn.textContent = '…'; }
+  const ref = 'EXP-' + Date.now().toString(36).toUpperCase().slice(-6);
+  let refInput = form.querySelector('[name="reference_reservation"]');
+  if (!refInput) { refInput = document.createElement('input'); refInput.type = 'hidden'; refInput.name = 'reference_reservation'; form.appendChild(refInput); }
+  refInput.value = ref;
   fetch('/', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: new URLSearchParams(new FormData(form)).toString()
-  }).catch(() => {});
-  document.getElementById('bookingRef').textContent = 'EXP-' + Date.now().toString(36).toUpperCase().slice(-6);
-  document.getElementById('quickFormWrap').style.display = 'none';
-  document.getElementById('detailedFormWrap').style.display = 'none';
-  document.getElementById('bookSuccess').style.display = '';
-  window.scrollTo({ top: document.getElementById('formSection').offsetTop - 80, behavior: 'smooth' });
+  })
+  .then(res => {
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    document.getElementById('bookingRef').textContent = ref;
+    document.getElementById('quickFormWrap').style.display = 'none';
+    document.getElementById('detailedFormWrap').style.display = 'none';
+    document.getElementById('bookSuccess').style.display = '';
+    window.scrollTo({ top: document.getElementById('formSection').offsetTop - 80, behavior: 'smooth' });
+  })
+  .catch(err => {
+    console.error('Form submission failed:', err);
+    if (btn) { btn.disabled = false; btn.textContent = btn.getAttribute('data-label') || 'Send booking request'; }
+    alert('Une erreur est survenue lors de l\'envoi. Veuillez nous contacter directement par WhatsApp : +33 7 87 25 29 64');
+  });
 }
 document.getElementById('quickForm').addEventListener('submit', e => { e.preventDefault(); submitForm(e.target); });
 document.getElementById('detailedForm').addEventListener('submit', e => { e.preventDefault(); submitForm(e.target); });

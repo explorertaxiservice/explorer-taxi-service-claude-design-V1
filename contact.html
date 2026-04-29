@@ -52,12 +52,12 @@
       <form class="reveal" id="contactForm" name="contact" data-netlify="true" style="background: var(--white); padding: 32px; border-radius: var(--radius-lg); border: 1px solid var(--slate-line); display: flex; flex-direction: column; gap: 20px;">
         <input type="hidden" name="form-name" value="contact">
         <div class="grid-2" style="gap: 16px;">
-          <div class="field"><label><span data-lang="en">First name</span><span data-lang="fr">Prénom</span></label><input type="text" name="firstName" required></div>
-          <div class="field"><label><span data-lang="en">Last name</span><span data-lang="fr">Nom</span></label><input type="text" name="lastName" required></div>
+          <div class="field"><label><span data-lang="en">First name</span><span data-lang="fr">Prénom</span></label><input type="text" name="prenom" required></div>
+          <div class="field"><label><span data-lang="en">Last name</span><span data-lang="fr">Nom</span></label><input type="text" name="nom" required></div>
         </div>
         <div class="field"><label>Email</label><input type="email" name="email" required><span class="err"><span data-lang="en">Please enter a valid email.</span><span data-lang="fr">Email invalide.</span></span></div>
-        <div class="field"><label><span data-lang="en">What's it about?</span><span data-lang="fr">Sujet</span></label><select name="topic" id="contactTopic"><option data-en="A booking question" data-fr="Une question de réservation">A booking question</option><option data-en="Wheelchair fit / accessibility" data-fr="Compatibilité fauteuil">Wheelchair fit / accessibility</option><option data-en="Custom day tour" data-fr="Journée sur-mesure">Custom day tour</option><option data-en="Pricing or invoicing" data-fr="Tarifs ou facturation">Pricing or invoicing</option><option data-en="Something else" data-fr="Autre chose">Something else</option></select></div>
-        <div class="field"><label><span data-lang="en">How would you like a reply?</span><span data-lang="fr">Réponse préférée</span></label><div class="checks" style="flex-direction:row;flex-wrap:wrap;gap:20px;"><label class="check"><input type="radio" name="reply" value="email" checked> Email</label><label class="check"><input type="radio" name="reply" value="phone"> <span data-lang="en">Phone call</span><span data-lang="fr">Appel</span></label><label class="check"><input type="radio" name="reply" value="wa"> WhatsApp</label></div></div>
+        <div class="field"><label><span data-lang="en">What's it about?</span><span data-lang="fr">Sujet</span></label><select name="sujet" id="contactTopic"><option data-en="A booking question" data-fr="Une question de réservation">A booking question</option><option data-en="Wheelchair fit / accessibility" data-fr="Compatibilité fauteuil">Wheelchair fit / accessibility</option><option data-en="Custom day tour" data-fr="Journée sur-mesure">Custom day tour</option><option data-en="Pricing or invoicing" data-fr="Tarifs ou facturation">Pricing or invoicing</option><option data-en="Something else" data-fr="Autre chose">Something else</option></select></div>
+        <div class="field"><label><span data-lang="en">How would you like a reply?</span><span data-lang="fr">Réponse préférée</span></label><div class="checks" style="flex-direction:row;flex-wrap:wrap;gap:20px;"><label class="check"><input type="radio" name="preference_reponse" value="email" checked> Email</label><label class="check"><input type="radio" name="preference_reponse" value="phone"> <span data-lang="en">Phone call</span><span data-lang="fr">Appel</span></label><label class="check"><input type="radio" name="preference_reponse" value="wa"> WhatsApp</label></div></div>
         <div class="field"><label><span data-lang="en">Message</span><span data-lang="fr">Message</span></label><textarea name="message" required placeholder="..."></textarea></div>
         <label class="check"><input type="checkbox" required> <span style="font-size:13px;color:var(--slate-soft);"><span data-lang="en">I agree to be contacted about my message. We don't share your details.</span><span data-lang="fr">J'accepte d'être contacté. Vos informations ne sont pas partagées.</span></span></label>
         <button type="submit" class="btn btn-marine btn-lg btn-arrow"><span data-lang="en">Send message</span><span data-lang="fr">Envoyer</span></button>
@@ -136,13 +136,23 @@ document.getElementById('contactForm').addEventListener('submit', e => {
     return;
   }
   f.email.parentElement.classList.remove('invalid');
+  const btn = f.querySelector('[type="submit"]');
+  if (btn) btn.disabled = true;
   fetch('/', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: new URLSearchParams(new FormData(f)).toString()
-  }).catch(() => {});
-  document.getElementById('contactSuccess').style.display = 'block';
-  f.reset();
+  })
+  .then(res => {
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    document.getElementById('contactSuccess').style.display = 'block';
+    f.reset();
+  })
+  .catch(err => {
+    console.error('Contact form failed:', err);
+    if (btn) btn.disabled = false;
+    alert('Une erreur est survenue. Contactez-nous directement : +33 7 87 25 29 64');
+  });
 });
 </script>
 </body>
