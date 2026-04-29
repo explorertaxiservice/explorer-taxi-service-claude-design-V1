@@ -6,7 +6,7 @@
   const active = document.body.dataset.page || '';
 
   const navItems = [
-    { href: 'airport-transfers.html', en: 'Airport transfers', fr: 'Transferts aéroport', key: 'airport' },
+    { href: 'airport-transfers.html', en: 'Airport & station transfers', fr: 'Aéroports & gares', key: 'airport' },
     { href: 'disneyland.html', en: 'Disneyland', fr: 'Disneyland', key: 'disneyland' },
     { href: 'day-hire.html', en: 'Private day hire', fr: 'Journée privée', key: 'day-hire' },
     { href: 'vehicle.html', en: 'Our vehicle', fr: 'Notre véhicule', key: 'vehicle' },

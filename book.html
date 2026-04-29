@@ -30,7 +30,7 @@
         <div class="step" data-step="1">
           <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 24px;"><span style="width: 32px; height: 32px; border-radius: 50%; background: var(--marine); color: var(--white); display: grid; place-items: center; font-weight: 600; font-size: 14px;">1</span><h3 style="font-size: 1.4rem;"><span data-lang="en">Plan your accessible transfer</span><span data-lang="fr">Planifiez votre transfert</span></h3></div>
           <div class="grid-2" style="gap: 16px; margin-bottom: 16px;">
-            <div class="field"><label><span data-lang="en">Service</span><span data-lang="fr">Service</span></label><select name="service"><option value="airport">Airport transfer</option><option value="disney">Disneyland transfer</option><option value="day">Private day hire</option></select></div>
+            <div class="field"><label><span data-lang="en">Service</span><span data-lang="fr">Service</span></label><select name="service"><option value="cdg">CDG Airport Transfer</option><option value="orly">Orly Airport Transfer</option><option value="gare">Train Station Transfer</option><option value="disney">Disneyland transfer</option><option value="day">Private day hire</option></select></div>
             <div class="field"><label><span data-lang="en">Passengers</span><span data-lang="fr">Passagers</span></label><select name="pax"><option>1</option><option>2</option><option selected>3</option><option>4</option></select></div>
           </div>
           <div class="grid-2" style="gap: 16px; margin-bottom: 16px;">
@@ -83,7 +83,7 @@
         <div class="card card-dark" style="padding: 32px;">
           <h4 style="color: var(--white); margin-bottom: 16px;"><span data-lang="en">Booking summary</span><span data-lang="fr">Récapitulatif</span></h4>
           <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 14px; font-size: 14.5px; color: rgba(247,244,238,0.85);">
-            <li style="display:flex;justify-content:space-between;gap:16px;"><span><span data-lang="en">Service</span><span data-lang="fr">Service</span></span><strong style="color:var(--white);"><span data-lang="en">Airport transfer</span><span data-lang="fr">Aéroport</span></strong></li>
+            <li style="display:flex;justify-content:space-between;gap:16px;"><span><span data-lang="en">Service</span><span data-lang="fr">Service</span></span><strong style="color:var(--white);" id="summaryService">CDG Airport Transfer</strong></li>
             <li style="display:flex;justify-content:space-between;gap:16px;"><span><span data-lang="en">Estimated</span><span data-lang="fr">Estimation</span></span><strong style="color:var(--gold);" id="priceEstimate">—</strong></li>
             <li style="display:flex;justify-content:space-between;gap:16px;"><span><span data-lang="en">Confirmation</span><span data-lang="fr">Confirmation</span></span><strong style="color:var(--white);"><span data-lang="en">Within 2 hours</span><span data-lang="fr">Sous 2h</span></strong></li>
             <li style="display:flex;justify-content:space-between;gap:16px;"><span><span data-lang="en">Cancellation</span><span data-lang="fr">Annulation</span></span><strong style="color:var(--white);"><span data-lang="en">Free 24h before</span><span data-lang="fr">Gratuite 24h avant</span></strong></li>
@@ -121,14 +121,18 @@
 <script src="assets/chrome.js"></script>
 <script src="assets/site.js"></script>
 <script>
-const servicePrices = { airport: 'From €70', disney: 'From €90', day: 'On request' };
-const servicePricesFr = { airport: 'À partir de €70', disney: 'À partir de €90', day: 'Sur devis' };
+const servicePrices = { cdg: '€95', orly: '€70', gare: '€50', disney: 'From €90', day: 'On request' };
+const servicePricesFr = { cdg: '€95', orly: '€70', gare: '€50', disney: 'À partir de €90', day: 'Sur devis' };
+const serviceLabels = { cdg: 'CDG Airport Transfer', orly: 'Orly Airport Transfer', gare: 'Train Station Transfer', disney: 'Disneyland Transfer', day: 'Private Day Hire' };
+const serviceLabelsF = { cdg: 'Transfert CDG', orly: 'Transfert Orly', gare: 'Transfert gare', disney: 'Transfert Disneyland', day: 'Journée privée' };
 
 function updatePrice() {
   const lang = document.documentElement.getAttribute('data-lang') || 'en';
   const val = document.querySelector('[name=service]').value;
   const prices = lang === 'fr' ? servicePricesFr : servicePrices;
+  const labels = lang === 'fr' ? serviceLabelsF : serviceLabels;
   document.getElementById('priceEstimate').textContent = prices[val] || '—';
+  document.getElementById('summaryService').textContent = labels[val] || val;
 }
 
 function updateSelectLang() {
