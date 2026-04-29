@@ -72,13 +72,13 @@
             <div class="field" style="margin-bottom: 16px;">
               <label><span data-lang="en">Trip type</span><span data-lang="fr">Type de trajet</span> *</label>
               <select name="type_trajet" id="quickService" required>
-                <option value=""><span data-lang="en">Select your route...</span><span data-lang="fr">Choisissez votre trajet...</span></option>
-                <option value="cdg">CDG Airport Transfer — €95</option>
-                <option value="orly">Orly Airport Transfer — €70</option>
-                <option value="gare">Train Station Transfer — €50</option>
-                <option value="disney-cdg">CDG → Disneyland — €120</option>
-                <option value="disney-paris">Paris → Disneyland — €90</option>
-                <option value="day"><span data-lang="en">Private day hire</span><span data-lang="fr">Journée privée</span></option>
+                <option value="" data-en="Select your route..." data-fr="Choisissez votre trajet...">Select your route...</option>
+                <option value="cdg" data-en="CDG Airport Transfer — €95" data-fr="Transfert CDG — €95">CDG Airport Transfer — €95</option>
+                <option value="orly" data-en="Orly Airport Transfer — €70" data-fr="Transfert Orly — €70">Orly Airport Transfer — €70</option>
+                <option value="gare" data-en="Train Station Transfer — €50" data-fr="Transfert gare — €50">Train Station Transfer — €50</option>
+                <option value="disney-cdg" data-en="CDG → Disneyland — €120" data-fr="CDG → Disneyland — €120">CDG → Disneyland — €120</option>
+                <option value="disney-paris" data-en="Paris → Disneyland — €90" data-fr="Paris → Disneyland — €90">Paris → Disneyland — €90</option>
+                <option value="day" data-en="Private day hire" data-fr="Journée privée">Private day hire</option>
               </select>
             </div>
             <div class="grid-2" style="gap: 16px; margin-bottom: 16px;">
@@ -341,6 +341,17 @@ function updatePrice() {
 const qs = document.getElementById('quickService');
 if (qs) qs.addEventListener('change', updatePrice);
 updatePrice();
+
+function updateSelectLang() {
+  const lang = document.documentElement.getAttribute('data-lang') || 'en';
+  document.querySelectorAll('option[data-en]').forEach(opt => {
+    opt.textContent = opt.dataset[lang] || opt.dataset.en;
+  });
+}
+updateSelectLang();
+document.addEventListener('click', e => {
+  if (e.target.closest('.lang-toggle button')) setTimeout(updateSelectLang, 30);
+});
 document.addEventListener('click', e => {
   if (e.target.closest('.lang-toggle button')) setTimeout(updatePrice, 30);
 });
