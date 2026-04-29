@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact · Explorer Taxi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css?v=2">
+</head>
+<body data-page="contact">
+<div data-chrome="header"></div>
+
+<section class="page-hero">
+  <div class="container-narrow" style="position: relative; z-index: 1;">
+    <div class="breadcrumb">Contact</div>
+    <h1><span data-lang="en">Get in <em>touch</em></span><span data-lang="fr">Nous <em>contacter</em></span></h1>
+    <p class="lead" style="margin: 24px auto 0;"><span data-lang="en">Phone, WhatsApp, or email — Aimad answers personally, usually within two hours.</span><span data-lang="fr">Téléphone, WhatsApp ou email — Aimad répond personnellement, sous deux heures.</span></p>
+  </div>
+</section>
+
+<section style="background: var(--white);">
+  <div class="container">
+    <div class="grid-2" style="gap: 64px; align-items: start;">
+      <div class="reveal">
+        <span class="eyebrow"><span data-lang="en">Multiple ways to reach us</span><span data-lang="fr">Plusieurs façons</span></span>
+        <h2 style="margin-bottom: 24px;"><span data-lang="en">Multiple ways to reach Aimad.</span><span data-lang="fr">Plusieurs façons de joindre Aimad.</span></h2>
+        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 24px;">
+          <li style="display: flex; gap: 16px;"><div style="width:48px;height:48px;border-radius:50%;background:rgba(11,57,84,0.08);color:var(--marine);display:grid;place-items:center;flex-shrink:0;font-size:20px;">📞</div><div><h4 style="margin-bottom:4px;"><span data-lang="en">Phone</span><span data-lang="fr">Téléphone</span></h4><p style="margin:0;color:var(--slate-soft);font-size:15px;">+33 7 87 25 29 64</p><p class="muted" style="font-size:13px;margin-top:4px;"><span data-lang="en">Available 7am – 11pm CET</span><span data-lang="fr">Disponible 7h–23h</span></p></div></li>
+          <li style="display: flex; gap: 16px;"><div style="width:48px;height:48px;border-radius:50%;background:rgba(45,122,79,0.12);color:var(--green);display:grid;place-items:center;flex-shrink:0;font-size:20px;">💬</div><div><h4 style="margin-bottom:4px;">WhatsApp</h4><p style="margin:0;color:var(--slate-soft);font-size:15px;">+33 7 87 25 29 64</p><p class="muted" style="font-size:13px;margin-top:4px;"><span data-lang="en">24/7, fastest reply</span><span data-lang="fr">24/7, réponse la plus rapide</span></p></div></li>
+          <li style="display: flex; gap: 16px;"><div style="width:48px;height:48px;border-radius:50%;background:rgba(201,169,97,0.18);color:var(--gold-deep);display:grid;place-items:center;flex-shrink:0;font-size:20px;">✉</div><div><h4 style="margin-bottom:4px;">Email</h4><p style="margin:0;color:var(--slate-soft);font-size:15px;">contact@explorertaxiservice.com</p><p class="muted" style="font-size:13px;margin-top:4px;"><span data-lang="en">Reply within 2 hours, daytime</span><span data-lang="fr">Réponse sous 2h en journée</span></p></div></li>
+        </ul>
+      </div>
+      <div class="reveal">
+        <div class="img-ph" data-ratio="square" style="overflow:hidden;"><img src="uploads/vehicle-eiffel.jpg" alt="Véhicule Explorer Taxi à Paris" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;display:block;position:absolute;top:0;left:0;"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="grid-2" style="gap: 64px; align-items: start;">
+      <div class="reveal">
+        <span class="eyebrow"><span data-lang="en">Or write to us</span><span data-lang="fr">Ou écrivez-nous</span></span>
+        <h2 style="margin-bottom: 16px;"><span data-lang="en">Send us a message.</span><span data-lang="fr">Envoyez un message.</span></h2>
+        <p class="lead"><span data-lang="en">We answer all questions, big and small. Reply within two hours during the day.</span><span data-lang="fr">Toute question, petite ou grande. Réponse sous 2h en journée.</span></p>
+      </div>
+      <form class="reveal" id="contactForm" style="background: var(--white); padding: 32px; border-radius: var(--radius-lg); border: 1px solid var(--slate-line); display: flex; flex-direction: column; gap: 20px;">
+        <div class="grid-2" style="gap: 16px;">
+          <div class="field"><label><span data-lang="en">First name</span><span data-lang="fr">Prénom</span></label><input type="text" name="firstName" required></div>
+          <div class="field"><label><span data-lang="en">Last name</span><span data-lang="fr">Nom</span></label><input type="text" name="lastName" required></div>
+        </div>
+        <div class="field"><label>Email</label><input type="email" name="email" required><span class="err"><span data-lang="en">Please enter a valid email.</span><span data-lang="fr">Email invalide.</span></span></div>
+        <div class="field"><label><span data-lang="en">What's it about?</span><span data-lang="fr">Sujet</span></label><select name="topic"><option><span data-lang="en">A booking question</span><span data-lang="fr">Une question de réservation</span></option><option><span data-lang="en">Wheelchair fit / accessibility</span><span data-lang="fr">Compatibilité fauteuil</span></option><option><span data-lang="en">Custom day tour</span><span data-lang="fr">Journée sur-mesure</span></option><option><span data-lang="en">Pricing or invoicing</span><span data-lang="fr">Tarifs ou facturation</span></option><option><span data-lang="en">Something else</span><span data-lang="fr">Autre chose</span></option></select></div>
+        <div class="field"><label><span data-lang="en">How would you like a reply?</span><span data-lang="fr">Réponse préférée</span></label><div class="checks" style="flex-direction:row;flex-wrap:wrap;gap:20px;"><label class="check"><input type="radio" name="reply" value="email" checked> Email</label><label class="check"><input type="radio" name="reply" value="phone"> <span data-lang="en">Phone call</span><span data-lang="fr">Appel</span></label><label class="check"><input type="radio" name="reply" value="wa"> WhatsApp</label></div></div>
+        <div class="field"><label><span data-lang="en">Message</span><span data-lang="fr">Message</span></label><textarea name="message" required placeholder="..."></textarea></div>
+        <label class="check"><input type="checkbox" required> <span style="font-size:13px;color:var(--slate-soft);"><span data-lang="en">I agree to be contacted about my message. We don't share your details.</span><span data-lang="fr">J'accepte d'être contacté. Vos informations ne sont pas partagées.</span></span></label>
+        <button type="submit" class="btn btn-marine btn-lg btn-arrow"><span data-lang="en">Send message</span><span data-lang="fr">Envoyer</span></button>
+        <div id="contactSuccess" style="display:none;padding:16px;background:rgba(45,122,79,0.1);color:var(--green);border-radius:var(--radius);font-weight:600;"><span data-lang="en">Thanks — Aimad will get back to you within 2 hours.</span><span data-lang="fr">Merci — Aimad vous répond sous 2h.</span></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section style="background: var(--ivory-warm);">
+  <div class="container-narrow center reveal">
+    <h2 style="margin-bottom: 16px;"><span data-lang="en">Need quick answers?<br>Call or message us.</span><span data-lang="fr">Une réponse rapide ?<br>Appelez ou écrivez.</span></h2>
+    <p class="lead" style="margin: 0 auto 32px;"><span data-lang="en">For urgent or last-minute trips, WhatsApp is the fastest way to reach Aimad.</span><span data-lang="fr">Pour l'urgent, WhatsApp est le plus rapide.</span></p>
+    <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+      <a href="tel:+33787252964" class="btn btn-marine btn-arrow">📞 <span data-lang="en">Call</span><span data-lang="fr">Appeler</span></a>
+      <a href="https://wa.me/33787252964" class="btn btn-outline">💬 WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<section style="background: var(--marine); color: var(--ivory);">
+  <div class="container">
+    <div class="grid-2" style="gap: 64px; align-items: center;">
+      <div class="reveal">
+        <span class="eyebrow" style="color: var(--gold);"><span data-lang="en">Why travelers choose Explorer</span><span data-lang="fr">Pourquoi nous choisir</span></span>
+        <h2 style="color: var(--white); margin-bottom: 24px;"><span data-lang="en">Why travelers choose Explorer.</span><span data-lang="fr">Pourquoi les voyageurs choisissent Explorer.</span></h2>
+        <p style="color: rgba(247,244,238,0.8); margin-bottom: 24px;"><span data-lang="en">A driver who shows up. A vehicle that fits. Pricing that doesn't change at the curb.</span><span data-lang="fr">Un chauffeur qui vient. Un véhicule adapté. Un prix qui ne bouge pas.</span></p>
+        <a href="about.html" class="btn btn-primary btn-arrow"><span data-lang="en">Read more</span><span data-lang="fr">En savoir plus</span></a>
+      </div>
+      <div class="stats stats-dark reveal" style="grid-template-columns:1fr 1fr;gap:32px;">
+        <div class="stat"><div class="num">5.0</div><div class="lbl"><span data-lang="en">Google rating</span><span data-lang="fr">Note Google</span></div></div>
+        <div class="stat"><div class="num">23</div><div class="lbl"><span data-lang="en">Verified reviews</span><span data-lang="fr">Avis vérifiés</span></div></div>
+        <div class="stat"><div class="num">100%</div><div class="lbl"><span data-lang="en">Show-up rate</span><span data-lang="fr">Taux de présence</span></div></div>
+        <div class="stat"><div class="num">PMR</div><div class="lbl"><span data-lang="en">Specialised driver</span><span data-lang="fr">Chauffeur spécialisé</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background: var(--white);">
+  <div class="container">
+    <div class="grid-2" style="gap: 64px; align-items: center;">
+      <div class="reveal">
+        <div class="img-ph" data-ratio="square" style="overflow:hidden;"><img src="uploads/aimad-client.jpg" alt="Aimad avec une cliente en fauteuil roulant" style="width:100%;height:100%;object-fit:cover;object-position:top;border-radius:inherit;display:block;position:absolute;top:0;left:0;"></div>
+      </div>
+      <div class="reveal">
+        <span class="eyebrow"><span data-lang="en">No middlemen</span><span data-lang="fr">Sans intermédiaire</span></span>
+        <h2 style="margin-bottom: 20px;"><span data-lang="en">You always speak with Aimad <em style="color: var(--gold-deep);">directly</em>.</span><span data-lang="fr">Vous parlez toujours <em style="color: var(--gold-deep);">directement</em> à Aimad.</span></h2>
+        <p class="lead" style="margin-bottom: 24px;"><span data-lang="en">No call centre. No bot. No first-line agent. Whatever number you call, whatever email you write — it's Aimad on the other end.</span><span data-lang="fr">Pas de centre d'appel, pas de bot. Quelle que soit la voie, c'est Aimad qui répond.</span></p>
+        <a href="book.html" class="btn btn-outline btn-arrow"><span data-lang="en">Book now</span><span data-lang="fr">Réserver</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div data-chrome="footer"></div>
+<script src="assets/chrome.js"></script>
+<script src="assets/site.js"></script>
+<script>
+document.getElementById('contactForm').addEventListener('submit', e => {
+  e.preventDefault();
+  const f = e.target, email = f.email.value;
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    f.email.parentElement.classList.add('invalid');
+    return;
+  }
+  f.email.parentElement.classList.remove('invalid');
+  document.getElementById('contactSuccess').style.display = 'block';
+  f.reset();
+});
+</script>
+</body>
+</html>

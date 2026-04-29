@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reviews · Explorer Taxi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css?v=2">
+</head>
+<body data-page="reviews">
+<div data-chrome="header"></div>
+
+<section class="page-hero">
+  <div class="container-narrow" style="position: relative; z-index: 1;">
+    <div class="breadcrumb"><span data-lang="en">Reviews</span><span data-lang="fr">Avis</span></div>
+    <h1><span data-lang="en">What travelers say</span><span data-lang="fr">Ce que disent les voyageurs</span></h1>
+    <p class="lead" style="margin: 24px auto 0;"><span data-lang="en">Five stars across 23 Google reviews. Below — a fuller picture, by the kind of trip.</span><span data-lang="fr">Cinq étoiles sur 23 avis Google. Ci-dessous, un aperçu complet par type de trajet.</span></p>
+    <div style="display: inline-flex; align-items: center; gap: 12px; margin-top: 28px; padding: 12px 20px; background: rgba(255,255,255,0.08); border-radius: 999px; backdrop-filter: blur(10px);">
+      <span class="stars" style="font-size: 18px;">★★★★★</span>
+      <strong style="color: white;">5.0</strong>
+      <span style="color: rgba(247,244,238,0.7); font-size: 14px;">· <span data-lang="en">23 verified Google reviews</span><span data-lang="fr">23 avis Google vérifiés</span></span>
+    </div>
+  </div>
+</section>
+
+<section style="background: var(--white);">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><span data-lang="en">Featured</span><span data-lang="fr">À la une</span></span>
+      <h2><span data-lang="en">Guest reviews.</span><span data-lang="fr">Avis voyageurs.</span></h2>
+    </div>
+    <div class="grid-3">
+      <div class="card reveal"><div class="stars">★★★★★</div><p style="font-family:var(--font-display);font-size:1.15rem;line-height:1.5;color:var(--marine);margin:14px 0 24px;">"Never have we ever had such a marvelous, competent and skilled taxi driver as Aimad. He drove four of us all around Paris for six days. His kindness and caring we have never experienced in a taxi driver. We would give him a million stars."</p><div style="display:flex;align-items:center;gap:12px;"><div style="width:40px;height:40px;border-radius:50%;background:var(--ivory-warm);display:grid;place-items:center;font-weight:600;color:var(--marine);">SR</div><div><strong style="display:block;font-size:14px;">Sally Russell</strong><span class="muted" style="font-size:12px;">Local Guide · avril 2025</span></div></div></div>
+      <div class="card reveal"><div class="stars">★★★★★</div><p style="font-family:var(--font-display);font-size:1.15rem;line-height:1.5;color:var(--marine);margin:14px 0 24px;">"Aimad was the best ambassador to welcome us to Paris. He was so solid in his process for securing me and my wheelchair — a smooth driver, which is a true feat in Paris traffic! Would not hesitate to use his service again and will recommend to anyone!"</p><div style="display:flex;align-items:center;gap:12px;"><div style="width:40px;height:40px;border-radius:50%;background:var(--ivory-warm);display:grid;place-items:center;font-weight:600;color:var(--marine);">KG</div><div><strong style="display:block;font-size:14px;">kwadgirl</strong><span class="muted" style="font-size:12px;">octobre 2025</span></div></div></div>
+      <div class="card reveal"><div class="stars">★★★★★</div><p style="font-family:var(--font-display);font-size:1.15rem;line-height:1.5;color:var(--marine);margin:14px 0 24px;">"Reliable and dependable accessible service. Clean vehicle, plenty of space for my large power wheelchair, phone charger, working temperature control and good communication. Aimad is a great driver and provided great customer service!"</p><div style="display:flex;align-items:center;gap:12px;"><div style="width:40px;height:40px;border-radius:50%;background:var(--ivory-warm);display:grid;place-items:center;font-weight:600;color:var(--marine);">CC</div><div><strong style="display:block;font-size:14px;">Celestine Callahan</strong><span class="muted" style="font-size:12px;">avril 2025</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><span data-lang="en">Filter by trip</span><span data-lang="fr">Filtrer par trajet</span></span>
+      <h2><span data-lang="en">Find reviews by your trip type.</span><span data-lang="fr">Trouvez les avis par type de trajet.</span></h2>
+    </div>
+    <div class="reveal" style="display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-bottom: 40px;">
+      <button class="filter active" data-filter="all"><span data-lang="en">All</span><span data-lang="fr">Tous</span></button>
+      <button class="filter" data-filter="airport"><span data-lang="en">Airport transfer</span><span data-lang="fr">Aéroport</span></button>
+      <button class="filter" data-filter="disney">Disneyland</button>
+      <button class="filter" data-filter="day"><span data-lang="en">Day hire</span><span data-lang="fr">Journée</span></button>
+    </div>
+    <div class="grid-3" id="reviewGrid">
+      <div class="card reveal" data-cat="airport"><div class="stars">★★★★★</div><p style="margin:12px 0 16px;font-size:15px;">"Aimed, our driver, was absolutely outstanding. Professional, extremely helpful, friendly and engaging, and so helpful with our luggage, including my wheelchair. Can't recommend him enough."</p><strong style="font-size:13px;">Rollin_In_Hot</strong> · <span class="muted" style="font-size:12px;">juillet 2025</span></div>
+      <div class="card reveal" data-cat="airport"><div class="stars">★★★★★</div><p style="margin:12px 0 16px;font-size:15px;">"Superb service. Aimad, our driver, was very helpful and friendly. We needed a wheelchair accessible taxi and it was just perfect for us. Would highly recommend."</p><strong style="font-size:13px;">Ray Breakthrough</strong> · <span class="muted" style="font-size:12px;">février 2025</span></div>
+      <div class="card reveal" data-cat="disney"><div class="stars">★★★★★</div><p style="margin:12px 0 16px;font-size:15px;">"Return transfer from Paris Gare du Nord to Disney Land Paris. Aimad was amazing. Nothing was a problem. Highly recommended!"</p><strong style="font-size:13px;">Jim Cruddas</strong> · <span class="muted" style="font-size:12px;">septembre 2024</span></div>
+      <div class="card reveal" data-cat="airport"><div class="stars">★★★★★</div><p style="margin:12px 0 16px;font-size:15px;">"Thank you for making our stay an amazing experience. The rides we had with you made our trip worry free, convenient, and pleasant. Your service was reliable and you were extremely pleasant. Thank you!!!"</p><strong style="font-size:13px;">Farnoosh</strong> · <span class="muted" style="font-size:12px;">septembre 2024</span></div>
+      <div class="card reveal" data-cat="day"><div class="stars">★★★★★</div><p style="margin:12px 0 16px;font-size:15px;">"Ahmed knows Paris. His vehicle is clean. He knows how to help disabled folks. He speaks English beautifully. It touched my heart that he checked on us as we went through our journey."</p><strong style="font-size:13px;">Sandie McNamara</strong> · <span class="muted" style="font-size:12px;">août 2024</span></div>
+      <div class="card reveal" data-cat="day"><div class="stars">★★★★★</div><p style="margin:12px 0 16px;font-size:15px;">"Aimad of Explorer Taxi Service was terrific and made our trip to Paris for the Olympics even more memorable. We highly recommend him!"</p><strong style="font-size:13px;">Bill Fertig</strong> · <span class="muted" style="font-size:12px;">Local Guide · août 2024</span></div>
+      <div class="card reveal" data-cat="day"><div class="stars">★★★★★</div><p style="margin:12px 0 16px;font-size:15px;">"Aimad was extremely professional and very friendly. He ensured we saw all the sights and helped us make wonderful memories. We cannot recommend him highly enough."</p><strong style="font-size:13px;">Gareth Hutchinson</strong> · <span class="muted" style="font-size:12px;">juin 2024</span></div>
+      <div class="card reveal" data-cat="airport"><div class="stars">★★★★★</div><p style="margin:12px 0 16px;font-size:15px;">"Aimad was everything you could possibly want in a great driver. His van worked really well for my Power wheelchair and I would highly recommend him to anyone in Paris who needs accessible transportation."</p><strong style="font-size:13px;">Beth Schroepfer</strong> · <span class="muted" style="font-size:12px;">juin 2024</span></div>
+      <div class="card reveal" data-cat="airport"><div class="stars">★★★★★</div><p style="margin:12px 0 16px;font-size:15px;">"Excellent service avec Imed le chauffeur, c'est la 4ème fois que je fais appel à ses services je ne regrette pas, il vient à l'heure, il porte les valises, il est poli et il conduit bien."</p><strong style="font-size:13px;">Linda tounsia</strong> · <span class="muted" style="font-size:12px;">Local Guide · mai 2024</span></div>
+    </div>
+  </div>
+</section>
+
+<section style="background: var(--ivory-warm);">
+  <div class="container-narrow center reveal">
+    <h2 style="margin-bottom: 16px;"><span data-lang="en">Read all 23 reviews on Google.</span><span data-lang="fr">Lire les 23 avis sur Google.</span></h2>
+    <p class="lead" style="margin: 0 auto 32px;"><span data-lang="en">Verified, dated, by real travelers.</span><span data-lang="fr">Vérifiés, datés, voyageurs réels.</span></p>
+    <div class="grid-3" style="margin-bottom: 32px;">
+      <div class="card"><strong style="display:block;color:var(--marine);"><span data-lang="en">Google reviews</span><span data-lang="fr">Avis Google</span></strong><p class="muted" style="font-size:14px;margin-top:8px;"><span data-lang="en">All reviews are verified Google business reviews — no curation, no edits.</span><span data-lang="fr">Tous les avis sont vérifiés.</span></p></div>
+      <div class="card"><strong style="display:block;color:var(--marine);"><span data-lang="en">Verified travelers</span><span data-lang="fr">Voyageurs vérifiés</span></strong><p class="muted" style="font-size:14px;margin-top:8px;"><span data-lang="en">Each reviewer is a real customer with a real Google account.</span><span data-lang="fr">Chaque avis vient d'un vrai client.</span></p></div>
+      <div class="card"><strong style="display:block;color:var(--marine);"><span data-lang="en">Open feedback</span><span data-lang="fr">Retours ouverts</span></strong><p class="muted" style="font-size:14px;margin-top:8px;"><span data-lang="en">If you ride and don't love it, we'll know — and we'll fix it.</span><span data-lang="fr">Si vous n'êtes pas satisfait, on corrige.</span></p></div>
+    </div>
+    <a href="https://google.com" target="_blank" rel="noopener" class="btn btn-marine btn-lg btn-arrow"><span data-lang="en">Read on Google</span><span data-lang="fr">Lire sur Google</span></a>
+  </div>
+</section>
+
+<section>
+  <div class="container-narrow center reveal">
+    <h2 style="margin-bottom: 16px;"><span data-lang="en">Ready for stress-free travel?</span><span data-lang="fr">Prêt pour un trajet sans stress ?</span></h2>
+    <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 24px;">
+      <a href="book.html" class="btn btn-marine btn-arrow"><span data-lang="en">Book now</span><span data-lang="fr">Réserver</span></a>
+      <a href="contact.html" class="btn btn-outline"><span data-lang="en">Ask a question</span><span data-lang="fr">Question</span></a>
+    </div>
+  </div>
+</section>
+
+<div data-chrome="footer"></div>
+<script src="assets/chrome.js"></script>
+<script src="assets/site.js"></script>
+<script>
+document.querySelectorAll('.filter').forEach(b => b.addEventListener('click', () => {
+  const f = b.dataset.filter;
+  document.querySelectorAll('.filter').forEach(x => x.classList.toggle('active', x.dataset.filter === f));
+  document.querySelectorAll('#reviewGrid > div').forEach(c => {
+    c.style.display = (f === 'all' || c.dataset.cat === f) ? '' : 'none';
+  });
+}));
+</script>
+<style>.filter{padding:8px 16px;border-radius:999px;border:1px solid var(--slate-line);background:var(--white);font-size:13px;font-weight:600;color:var(--slate-soft);}.filter.active{background:var(--marine);color:var(--white);border-color:var(--marine);}</style>
+</body>
+</html>

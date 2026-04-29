@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Book your transfer · Explorer Taxi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css?v=2">
+</head>
+<body data-page="book">
+<div data-chrome="header"></div>
+
+<section class="page-hero" style="padding: 64px 0 80px;">
+  <div class="container-narrow" style="position: relative; z-index: 1;">
+    <div class="breadcrumb"><span data-lang="en">Booking</span><span data-lang="fr">Réservation</span></div>
+    <h1><span data-lang="en">Book your <em>accessible</em> ride</span><span data-lang="fr">Réservez votre <em>trajet accessible</em></span></h1>
+    <p class="lead" style="margin: 24px auto 0;"><span data-lang="en">Two minutes. We confirm fit and timing within two hours, and you'll have Aimad's direct number.</span><span data-lang="fr">Deux minutes. Confirmation sous 2h, avec le numéro direct d'Aimad.</span></p>
+  </div>
+</section>
+
+<section style="background: var(--white); padding: 64px 0 96px;" id="formSection">
+  <div class="container">
+    <div style="display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 48px; align-items: start;">
+      <form id="bookForm" class="reveal" style="background: var(--white); padding: 40px; border-radius: var(--radius-lg); border: 1px solid var(--slate-line); box-shadow: var(--shadow);">
+        <div class="step" data-step="1">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 24px;"><span style="width: 32px; height: 32px; border-radius: 50%; background: var(--marine); color: var(--white); display: grid; place-items: center; font-weight: 600; font-size: 14px;">1</span><h3 style="font-size: 1.4rem;"><span data-lang="en">Plan your accessible transfer</span><span data-lang="fr">Planifiez votre transfert</span></h3></div>
+          <div class="grid-2" style="gap: 16px; margin-bottom: 16px;">
+            <div class="field"><label><span data-lang="en">Service</span><span data-lang="fr">Service</span></label><select name="service"><option value="airport">Airport transfer</option><option value="disney">Disneyland transfer</option><option value="day">Private day hire</option></select></div>
+            <div class="field"><label><span data-lang="en">Passengers</span><span data-lang="fr">Passagers</span></label><select name="pax"><option>1</option><option>2</option><option selected>3</option><option>4</option></select></div>
+          </div>
+          <div class="grid-2" style="gap: 16px; margin-bottom: 16px;">
+            <div class="field"><label><span data-lang="en">Pickup address or airport</span><span data-lang="fr">Lieu de prise en charge</span></label><input type="text" name="from" placeholder="CDG Terminal 2E" required><span class="err"><span data-lang="en">Please enter a pickup location.</span><span data-lang="fr">Indiquez un lieu.</span></span></div>
+            <div class="field"><label><span data-lang="en">Drop-off</span><span data-lang="fr">Destination</span></label><input type="text" name="to" placeholder="Hotel Ritz Paris" required><span class="err"><span data-lang="en">Please enter a destination.</span><span data-lang="fr">Indiquez une destination.</span></span></div>
+          </div>
+          <div class="grid-2" style="gap: 16px; margin-bottom: 16px;">
+            <div class="field"><label><span data-lang="en">Date</span><span data-lang="fr">Date</span></label><input type="date" name="date" required></div>
+            <div class="field"><label><span data-lang="en">Pickup time</span><span data-lang="fr">Heure</span></label><input type="time" name="time" required></div>
+          </div>
+          <div class="field" style="margin-bottom: 16px;"><label><span data-lang="en">Flight number (if applicable)</span><span data-lang="fr">N° de vol (si applicable)</span></label><input type="text" name="flight" placeholder="AF1234"></div>
+          <div class="field" style="margin-bottom: 24px;"><label><span data-lang="en">Wheelchair / accessibility</span><span data-lang="fr">Fauteuil / accessibilité</span></label><select name="chair"><option><span data-lang="en">Yes – manual wheelchair</span><span data-lang="fr">Oui – fauteuil manuel</span></option><option><span data-lang="en">Yes – powered wheelchair</span><span data-lang="fr">Oui – fauteuil électrique</span></option><option><span data-lang="en">Yes – mobility scooter</span><span data-lang="fr">Oui – scooter</span></option><option><span data-lang="en">No wheelchair, but accessibility helpful</span><span data-lang="fr">Pas de fauteuil, accessibilité utile</span></option><option><span data-lang="en">Standard transfer</span><span data-lang="fr">Trajet standard</span></option></select></div>
+          <div class="field" style="margin-bottom: 24px;"><label><span data-lang="en">Anything else? (special needs, child seats, extra stops…)</span><span data-lang="fr">Autre besoin ?</span></label><textarea name="notes" placeholder="..."></textarea></div>
+          <button type="button" class="btn btn-marine btn-lg btn-arrow" style="width: 100%;" onclick="nextStep()"><span data-lang="en">Continue to your details</span><span data-lang="fr">Continuer</span></button>
+        </div>
+
+        <div class="step" data-step="2" style="display:none;">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 24px;"><span style="width: 32px; height: 32px; border-radius: 50%; background: var(--marine); color: var(--white); display: grid; place-items: center; font-weight: 600; font-size: 14px;">2</span><h3 style="font-size: 1.4rem;"><span data-lang="en">Your contact details</span><span data-lang="fr">Vos coordonnées</span></h3></div>
+          <div class="grid-2" style="gap: 16px; margin-bottom: 16px;">
+            <div class="field"><label><span data-lang="en">First name</span><span data-lang="fr">Prénom</span></label><input type="text" name="fn" required></div>
+            <div class="field"><label><span data-lang="en">Last name</span><span data-lang="fr">Nom</span></label><input type="text" name="ln" required></div>
+          </div>
+          <div class="grid-2" style="gap: 16px; margin-bottom: 16px;">
+            <div class="field"><label>Email</label><input type="email" name="email" required><span class="err"><span data-lang="en">Valid email needed.</span><span data-lang="fr">Email valide.</span></span></div>
+            <div class="field"><label><span data-lang="en">Phone (with country code)</span><span data-lang="fr">Téléphone</span></label><input type="tel" name="phone" placeholder="+33 7 87 25 29 64" required></div>
+          </div>
+          <label class="check" style="margin-bottom: 24px;"><input type="checkbox" required> <span style="font-size: 13.5px;"><span data-lang="en">I agree to the booking terms. Free cancellation up to 24h before pickup.</span><span data-lang="fr">J'accepte les conditions. Annulation gratuite jusqu'à 24h avant.</span></span></label>
+          <div style="display: flex; gap: 12px;">
+            <button type="button" class="btn btn-outline" onclick="prevStep()"><span data-lang="en">Back</span><span data-lang="fr">Retour</span></button>
+            <button type="submit" class="btn btn-marine btn-lg btn-arrow" style="flex: 1;"><span data-lang="en">Confirm booking request</span><span data-lang="fr">Confirmer la demande</span></button>
+          </div>
+        </div>
+
+        <div class="step" data-step="3" style="display:none; text-align: center; padding: 32px 0;">
+          <div style="width: 80px; height: 80px; border-radius: 50%; background: rgba(45,122,79,0.15); color: var(--green); margin: 0 auto 24px; display: grid; place-items: center; font-size: 36px;">✓</div>
+          <h2 style="margin-bottom: 12px;"><span data-lang="en">Your trip is confirmed.</span><span data-lang="fr">Votre trajet est confirmé.</span></h2>
+          <p class="lead" style="margin: 0 auto 24px;"><span data-lang="en">Aimad has your details. You'll receive a confirmation email within 2 hours with his direct number.</span><span data-lang="fr">Aimad a vos détails. Confirmation par email sous 2h, avec son numéro direct.</span></p>
+          <div style="background: var(--ivory); border-radius: var(--radius); padding: 20px; margin: 24px 0; text-align: left; font-size: 14.5px;">
+            <strong style="display: block; margin-bottom: 12px; color: var(--marine);"><span data-lang="en">Reference</span><span data-lang="fr">Référence</span></strong>
+            <p id="bookingRef" style="font-family: 'JetBrains Mono', monospace; font-size: 18px; color: var(--gold-deep); margin: 0;"></p>
+          </div>
+          <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+            <a href="index.html" class="btn btn-outline"><span data-lang="en">Back to home</span><span data-lang="fr">Retour à l'accueil</span></a>
+            <a href="contact.html" class="btn btn-marine"><span data-lang="en">Contact Aimad</span><span data-lang="fr">Contacter Aimad</span></a>
+          </div>
+        </div>
+      </form>
+
+      <aside class="reveal" style="position: sticky; top: 100px;">
+        <div class="card card-dark" style="padding: 32px;">
+          <h4 style="color: var(--white); margin-bottom: 16px;"><span data-lang="en">Booking summary</span><span data-lang="fr">Récapitulatif</span></h4>
+          <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 14px; font-size: 14.5px; color: rgba(247,244,238,0.85);">
+            <li style="display:flex;justify-content:space-between;gap:16px;"><span><span data-lang="en">Service</span><span data-lang="fr">Service</span></span><strong style="color:var(--white);"><span data-lang="en">Airport transfer</span><span data-lang="fr">Aéroport</span></strong></li>
+            <li style="display:flex;justify-content:space-between;gap:16px;"><span><span data-lang="en">Estimated</span><span data-lang="fr">Estimation</span></span><strong style="color:var(--gold);">€65</strong></li>
+            <li style="display:flex;justify-content:space-between;gap:16px;"><span><span data-lang="en">Confirmation</span><span data-lang="fr">Confirmation</span></span><strong style="color:var(--white);"><span data-lang="en">Within 2 hours</span><span data-lang="fr">Sous 2h</span></strong></li>
+            <li style="display:flex;justify-content:space-between;gap:16px;"><span><span data-lang="en">Cancellation</span><span data-lang="fr">Annulation</span></span><strong style="color:var(--white);"><span data-lang="en">Free 24h before</span><span data-lang="fr">Gratuite 24h avant</span></strong></li>
+          </ul>
+          <hr style="border:none;border-top:1px solid rgba(255,255,255,0.1);margin:20px 0;">
+          <p style="font-size: 13.5px; color: rgba(247,244,238,0.7); margin: 0;"><span data-lang="en">No payment until Aimad confirms fit and timing. Pay on arrival or by transfer.</span><span data-lang="fr">Aucun paiement avant confirmation. Paiement à l'arrivée ou par virement.</span></p>
+        </div>
+        <div style="background: var(--ivory-warm); border-radius: var(--radius-lg); padding: 24px; margin-top: 16px; font-size: 14px;">
+          <h4 style="margin-bottom: 8px;"><span data-lang="en">Reach us now</span><span data-lang="fr">Joignez-nous</span></h4>
+          <p class="muted" style="margin-bottom: 12px; font-size: 13.5px;"><span data-lang="en">Prefer to call or message? Here's how to drop us any question about your accessible transfer.</span><span data-lang="fr">Préférez appeler ?</span></p>
+          <p style="margin: 4px 0;"><strong style="color: var(--marine);">📞</strong> +33 7 87 25 29 64</p>
+          <p style="margin: 4px 0;"><strong style="color: var(--marine);">💬</strong> WhatsApp 24/7</p>
+          <p style="margin: 4px 0;"><strong style="color: var(--marine);">✉</strong> contact@explorertaxiservice.com</p>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section style="background: var(--ivory-warm);">
+  <div class="container-narrow center reveal">
+    <h2 style="margin-bottom: 16px;"><span data-lang="en">Stay in the loop.</span><span data-lang="fr">Restez informé.</span></h2>
+    <p class="lead" style="margin: 0 auto 24px;"><span data-lang="en">Occasional notes about Paris travel for wheelchair users. No spam, ever.</span><span data-lang="fr">Quelques nouvelles, sans spam.</span></p>
+    <form id="newsletterForm" style="display: flex; gap: 8px; max-width: 480px; margin: 0 auto; flex-wrap: wrap;">
+      <input type="email" placeholder="you@example.com" required style="flex: 1; min-width: 200px; padding: 12px 16px; border: 1.5px solid var(--slate-line); border-radius: var(--radius); background: var(--white);">
+      <button class="btn btn-marine"><span data-lang="en">Subscribe</span><span data-lang="fr">S'inscrire</span></button>
+    </form>
+    <p id="newsSuccess" class="muted" style="margin-top: 16px; display: none; color: var(--green);"><span data-lang="en">Thanks — you're on the list.</span><span data-lang="fr">Merci — c'est noté.</span></p>
+    <p class="muted" style="font-size: 12px; margin-top: 12px;"><span data-lang="en">Privacy-respecting. Unsubscribe any time.</span><span data-lang="fr">Désinscription à tout moment.</span></p>
+  </div>
+</section>
+
+<div data-chrome="footer"></div>
+<script src="assets/chrome.js"></script>
+<script src="assets/site.js"></script>
+<script>
+function showStep(n) {
+  document.querySelectorAll('.step').forEach(s => s.style.display = (parseInt(s.dataset.step) === n ? '' : 'none'));
+  window.scrollTo({ top: document.getElementById('formSection').offsetTop - 80, behavior: 'smooth' });
+}
+function nextStep() {
+  const f = document.getElementById('bookForm');
+  let valid = true;
+  ['from','to','date','time'].forEach(k => {
+    const i = f[k]; const fi = i.parentElement;
+    if (!i.value) { fi.classList.add('invalid'); valid = false; } else fi.classList.remove('invalid');
+  });
+  if (valid) showStep(2);
+}
+function prevStep() { showStep(1); }
+document.getElementById('bookForm').addEventListener('submit', e => {
+  e.preventDefault();
+  const f = e.target, email = f.email.value;
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { f.email.parentElement.classList.add('invalid'); return; }
+  document.getElementById('bookingRef').textContent = 'EXP-' + Date.now().toString(36).toUpperCase().slice(-6);
+  showStep(3);
+});
+document.getElementById('newsletterForm').addEventListener('submit', e => {
+  e.preventDefault();
+  document.getElementById('newsSuccess').style.display = 'block';
+  e.target.reset();
+});
+// restore service from localStorage if user clicked from another page
+const params = new URLSearchParams(location.search);
+if (params.get('s')) document.querySelector('[name=service]').value = params.get('s');
+</script>
+</body>
+</html>
