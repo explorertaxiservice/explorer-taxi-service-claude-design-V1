@@ -21,17 +21,21 @@
   });
 
   /* ---------- Mobile menu ---------- */
+  function setMenuOpen(open) {
+    const menu = document.querySelector('.mobile-menu');
+    if (!menu) return;
+    menu.classList.toggle('open', open);
+    menu.setAttribute('aria-hidden', String(!open));
+    menu.querySelectorAll('a, button').forEach(el => {
+      el.setAttribute('tabindex', open ? '0' : '-1');
+    });
+  }
   document.addEventListener('click', e => {
-    if (e.target.closest('.menu-btn')) {
-      document.querySelector('.mobile-menu')?.classList.add('open');
-    }
-    if (e.target.closest('.menu-close')) {
-      document.querySelector('.mobile-menu')?.classList.remove('open');
-    }
-    if (e.target.closest('.mobile-menu nav a')) {
-      document.querySelector('.mobile-menu')?.classList.remove('open');
-    }
+    if (e.target.closest('.menu-btn')) setMenuOpen(true);
+    if (e.target.closest('.menu-close')) setMenuOpen(false);
+    if (e.target.closest('.mobile-menu nav a')) setMenuOpen(false);
   });
+  setMenuOpen(false);
 
   /* ---------- FAQ ---------- */
   document.addEventListener('click', e => {

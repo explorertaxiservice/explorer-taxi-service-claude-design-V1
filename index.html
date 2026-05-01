@@ -19,7 +19,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"></noscript>
   <link rel="icon" type="image/x-icon" href="uploads/logo/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="uploads/logo/favicon-32.png">
   <link rel="icon" type="image/png" sizes="192x192" href="uploads/logo/favicon-192.png">
@@ -49,7 +49,7 @@
   </div>
 </header>
 
-<div class="mobile-menu" aria-hidden="true">
+<div class="mobile-menu" aria-hidden="true" id="mobile-menu">
   <div class="mobile-menu-head">
     <a href="index.html" class="logo"><img src="uploads/logo/logo-wordmark.png" alt="Explorer Taxi Paris" style="height:34px;width:auto;display:block;max-width:180px;"></a>
     <button class="menu-close" aria-label="Close menu"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
