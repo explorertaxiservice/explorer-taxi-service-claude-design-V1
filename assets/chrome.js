@@ -45,7 +45,7 @@
     <div class="footer-grid">
       <div>
         <a href="index.html" class="logo"><img src="uploads/logo/logo-white.png" alt="Explorer Taxi Paris" style="height:40px;width:auto;display:block;"></a>
-        <p style="margin-top: 16px; max-width: 32ch; font-size: 14.5px;"><span data-lang="en">Wheelchair-accessible transfers in Paris and beyond. Run by Aimad — driver, not a platform.</span><span data-lang="fr">Transferts accessibles à Paris et au-delà. Géré par Aimad — un chauffeur, pas une plateforme.</span></p>
+        <p style="margin-top: 16px; max-width: 32ch; font-size: 14.5px;"><span data-lang="en">Wheelchair-accessible transfers in Paris and beyond. A team of 5 PMR-certified drivers — not a platform.</span><span data-lang="fr">Transferts accessibles à Paris et au-delà. Une équipe de 5 chauffeurs certifiés PMR — pas une plateforme.</span></p>
       </div>
       <div><h4>Services</h4><ul>
         <li><a href="airport-transfers.html"><span data-lang="en">Airport transfers</span><span data-lang="fr">Transferts aéroport</span></a></li>
@@ -58,9 +58,10 @@
         <li><a href="about.html"><span data-lang="en">About Aimad</span><span data-lang="fr">À propos</span></a></li>
         <li><a href="reviews.html"><span data-lang="en">Reviews</span><span data-lang="fr">Avis</span></a></li>
         <li><a href="contact.html">Contact</a></li>
+        <li><a href="faq.html">FAQ</a></li>
         <li><a href="book.html"><span data-lang="en">Book now</span><span data-lang="fr">Réserver</span></a></li>
       </ul></div>
-      <div><h4><span data-lang="en">Reach Aimad</span><span data-lang="fr">Joindre Aimad</span></h4><ul>
+      <div><h4><span data-lang="en">Reach us</span><span data-lang="fr">Nous contacter</span></h4><ul>
         <li>📞 +33 7 87 25 29 64</li>
         <li>💬 WhatsApp 24/7</li>
         <li>✉️ contact@explorertaxiservice.com</li>
