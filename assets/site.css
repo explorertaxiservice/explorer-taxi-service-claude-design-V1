@@ -383,6 +383,7 @@ section { padding: 96px 0; }
   flex-wrap: wrap;
   gap: 12px;
   margin-top: 36px;
+  min-height: 56px;
 }
 .hero-meta {
   display: flex;
