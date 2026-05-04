@@ -56,6 +56,27 @@
   }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
+  /* ---------- Cookie banner ---------- */
+  if (!localStorage.getItem('explorer-cookies')) {
+    const lang = root.getAttribute('data-lang') || 'en';
+    const banner = document.createElement('div');
+    banner.id = 'cookie-banner';
+    banner.innerHTML = `
+      <div class="cookie-inner">
+        <p>
+          <span data-lang="en">This site uses functional cookies only — no tracking, no advertising. <a href="cookies.html">Learn more</a></span>
+          <span data-lang="fr">Ce site utilise uniquement des cookies fonctionnels — aucun tracking, aucune publicité. <a href="cookies.html">En savoir plus</a></span>
+        </p>
+        <button id="cookie-ok" aria-label="Accept cookies">OK</button>
+      </div>`;
+    document.body.appendChild(banner);
+    document.getElementById('cookie-ok').addEventListener('click', () => {
+      localStorage.setItem('explorer-cookies', '1');
+      banner.classList.add('cookie-hide');
+      setTimeout(() => banner.remove(), 400);
+    });
+  }
+
   /* ---------- FAQ schema markup helper ---------- */
   /* (Optional) */
 })();

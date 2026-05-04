@@ -70,7 +70,7 @@
     </div>
     <div class="footer-bottom">
       <span>© 2026 Explorer Taxi · Paris, France</span>
-      <span><a href="#" style="margin-right: 16px;"><span data-lang="en">Privacy</span><span data-lang="fr">Confidentialité</span></a><a href="#" style="margin-right: 16px;">Terms</a><a href="#">Cookies</a></span>
+      <span><a href="privacy.html" style="margin-right: 16px;"><span data-lang="en">Privacy</span><span data-lang="fr">Confidentialité</span></a><a href="terms.html" style="margin-right: 16px;"><span data-lang="en">Terms</span><span data-lang="fr">CGV</span></a><a href="cookies.html"><span data-lang="en">Cookies</span><span data-lang="fr">Cookies</span></a></span>
     </div>
   </div>
 </footer>`;

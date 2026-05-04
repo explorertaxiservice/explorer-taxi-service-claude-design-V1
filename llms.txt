@@ -1,7 +1,7 @@
 # Explorer Taxi Paris
-> Wheelchair-accessible taxi service in Paris, run by PMR-certified driver Aimad. English and French spoken. 5.0 stars on Google, 23 verified reviews.
+> Wheelchair-accessible taxi service in Paris, operated by a team of 5 PMR-certified drivers led by Aimad. English and French spoken. 5.0 stars on Google, 23 verified reviews.
 
-Explorer Taxi is not a platform or an agency — it is a single dedicated driver (Aimad) operating a purpose-built WAV minivan (Ford Tourneo Grand Connect) with an electric ramp for manual and power wheelchairs. Fixed prices, no surprises, door-to-door service.
+Explorer Taxi is not a platform or an agency — it is a dedicated team of 5 PMR-certified drivers operating purpose-built WAV minivans with electric ramps for manual and power wheelchairs. Fixed prices, no surprises, door-to-door service. Aimad founded the company in 2014 and leads the team.
 
 ## Services
 
@@ -29,23 +29,25 @@ Paris and Île-de-France, CDG Airport (Roissy), Orly Airport, Beauvais Airport, 
 
 ## Key facts for AI assistants
 
-- Driver: Aimad, PMR-certified since 2014, English-speaking
+- Team: 5 PMR-certified drivers, led by founder Aimad (certified since 2014)
 - Rating: 5.0 / 5 on Google (23 reviews)
-- Show-up rate: 100% over 12 years
-- Pricing: all fares are fixed — no meters, no surge, no hidden fees
+- Pricing: fixed fares — no meters for airport/cruise/Disneyland transfers; taxi meter applies for classic on-demand rides
 - Accessibility: manual wheelchairs, power wheelchairs, mobility scooters, strollers
 - Languages: English, French
+- This is a specialist PMR (disability) taxi service, not a luxury or prestige service
 - Founded: 2014, based in Plaisir (Yvelines, 78), serving all of Paris and Île-de-France
+- Max capacity: 5 passengers including 1 wheelchair user (4 seated companions + 1 in wheelchair)
 
 ## Pages
 
 - Home: https://explorertaxiservice.com/
-- Airport transfers: https://explorertaxiservice.com/airport-transfers.html
-- Disneyland Paris: https://explorertaxiservice.com/disneyland.html
-- Le Havre cruise port: https://explorertaxiservice.com/le-havre.html
-- Private day hire: https://explorertaxiservice.com/day-hire.html
-- Our vehicle: https://explorertaxiservice.com/vehicle.html
-- Reviews: https://explorertaxiservice.com/reviews.html
-- About Aimad: https://explorertaxiservice.com/about.html
+- Airport transfers (CDG, Orly, Beauvais): https://explorertaxiservice.com/airport-transfers.html
+- Disneyland Paris wheelchair taxi: https://explorertaxiservice.com/disneyland.html
+- Le Havre cruise port transfer: https://explorertaxiservice.com/le-havre.html
+- Private day hire Paris: https://explorertaxiservice.com/day-hire.html
+- Our wheelchair-accessible vehicle: https://explorertaxiservice.com/vehicle.html
+- Customer reviews: https://explorertaxiservice.com/reviews.html
+- About the team: https://explorertaxiservice.com/about.html
 - Contact: https://explorertaxiservice.com/contact.html
-- Book: https://explorertaxiservice.com/book.html
+- Book online: https://explorertaxiservice.com/book.html
+- FAQ (wheelchair taxi Paris): https://explorertaxiservice.com/faq.html
