@@ -1,0 +1,15 @@
+# www → non-www (301 permanent)
+https://www.explorertaxiservice.com/* https://explorertaxiservice.com/:splat 301!
+
+# Ancienne structure /en-gb/ → pages actuelles (301 permanent)
+/en-gb/contact /contact.html 301
+/en-gb/airport-transfers /airport-transfers.html 301
+/en-gb/disneyland /disneyland.html 301
+/en-gb/day-hire /day-hire.html 301
+/en-gb/vehicle /vehicle.html 301
+/en-gb/reviews /reviews.html 301
+/en-gb/about /about.html 301
+/en-gb/book /book.html 301
+/en-gb/faq /faq.html 301
+/en-gb/ / 301
+/en-gb/* / 301
