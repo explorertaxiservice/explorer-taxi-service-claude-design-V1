@@ -350,10 +350,10 @@
 <script src="assets/site.js" defer></script>
 <script>
 // Pricing lookup
-const servicePrices = { cdg:'€95', orly:'€70', gare:'€50', 'disney-cdg':'€120', 'disney-paris':'€90', day:'On request' };
-const servicePricesFr = { cdg:'€95', orly:'€70', gare:'€50', 'disney-cdg':'€120', 'disney-paris':'€90', day:'Sur devis' };
-const serviceLabels = { cdg:'CDG Airport Transfer', orly:'Orly Airport Transfer', gare:'Train Station Transfer', 'disney-cdg':'CDG → Disneyland', 'disney-paris':'Paris → Disneyland', day:'Private Day Hire' };
-const serviceLabelsF = { cdg:'Transfert CDG', orly:'Transfert Orly', gare:'Transfert gare', 'disney-cdg':'CDG → Disneyland', 'disney-paris':'Paris → Disneyland', day:'Journée privée' };
+const servicePrices = { cdg:'€95', orly:'€70', gare:'€50', 'disney-cdg':'€120', 'disney-paris':'€90', day:'On request', 'lehavre-paris':'€450', 'lehavre-cdg':'€450', 'lehavre-orly':'€450' };
+const servicePricesFr = { cdg:'€95', orly:'€70', gare:'€50', 'disney-cdg':'€120', 'disney-paris':'€90', day:'Sur devis', 'lehavre-paris':'€450', 'lehavre-cdg':'€450', 'lehavre-orly':'€450' };
+const serviceLabels = { cdg:'CDG Airport Transfer', orly:'Orly Airport Transfer', gare:'Train Station Transfer', 'disney-cdg':'CDG → Disneyland', 'disney-paris':'Paris → Disneyland', day:'Private Day Hire', 'lehavre-paris':'Le Havre → Paris', 'lehavre-cdg':'Le Havre → CDG Airport', 'lehavre-orly':'Le Havre → Orly Airport' };
+const serviceLabelsF = { cdg:'Transfert CDG', orly:'Transfert Orly', gare:'Transfert gare', 'disney-cdg':'CDG → Disneyland', 'disney-paris':'Paris → Disneyland', day:'Journée privée', 'lehavre-paris':'Le Havre → Paris', 'lehavre-cdg':'Le Havre → Aéroport CDG', 'lehavre-orly':'Le Havre → Aéroport Orly' };
 
 function updatePrice() {
   const lang = document.documentElement.getAttribute('data-lang') || 'en';
